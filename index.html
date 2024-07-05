@@ -3,249 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Kumar's Portfolio</title>
+    <title>Ayush Kumar - LinkedIn Profile</title>
     <style>
-        /* CSS styles can be added here */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #2c3e50, #3498db);
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #ff4081, #81d4fa);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+            color: #ecf0f1;
         }
 
         .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 0 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
+        .header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .header img {
+            width: 150px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        h1 {
-            margin: 10px 0;
-            font-size: 2.5rem;
-        }
-
-        p {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        nav {
-            background-color: #333;
-            color: white;
+        .intro {
             text-align: center;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 30px 0;
         }
 
-        nav ul {
-            list-style-type: none;
+        .intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .skills, .projects, .contact {
+            background: #34495e;
+            padding: 50px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills h2, .projects h2, .contact h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #e74c3c;
+        }
+
+        .skills ul {
+            list-style: none;
             padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ff4081;
-        }
-
-        .introduction, .skills, .projects, .contact {
-            background-color: white;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .introduction h2, .skills h2, .projects h2, .contact h2 {
-            color: #ff4081;
-            text-align: center;
-        }
-
-        .introduction p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .skills-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            padding-top: 20px;
         }
 
-        .skill {
-            text-align: center;
-            margin: 10px;
-            padding: 20px;
-            background-color: #ff4081;
-            color: white;
+        .skills ul li {
+            margin: 10px 20px;
+            font-size: 1.2em;
+            color: #ecf0f1;
+            background: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .skills ul li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .skills ul li:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .skills ul li:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .skills ul li:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .skills ul li:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: #2c3e50;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            margin: 15px;
+            padding: 20px;
+            width: calc(33% - 40px);
             transition: transform 0.3s;
         }
 
-        .skill i {
-            font-size: 3rem;
-        }
-
-        .skill p {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .skill:hover {
+        .project-card:hover {
             transform: scale(1.05);
-            background-color: #ff79a6;
         }
 
-        .projects .project {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #ff4081;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #ff79a6;
-        }
-
-        .contact {
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
+        .project-card img {
             width: 100%;
+            border-radius: 10px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        .college-logo {
-            max-width: 80px;
+        .project-card h3 {
+            color: #e74c3c;
             margin-top: 10px;
         }
 
+        .project-card p {
+            color: #bdc3c7;
+        }
+
+        .contact ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact ul li {
+            margin: 10px 20px;
+        }
+
+        .contact ul li a img {
+            width: 48px;
+            transition: transform 0.5s;
+        }
+
+        .contact ul li a img:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #fff;
+            }
+            50% {
+                box-shadow: 0 0 20px #e74c3c, 0 0 30px #3498db, 0 0 40px #ffffff;
+            }
+            100% {
+                box-shadow: 0 0 5px #fff;
+            }
+        }
+
+        .header img, .contact ul li a img {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card {
+                width: calc(100% - 40px);
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="Ayush.jpeg" alt="Ayush Kumar" class="profile-img">
-            <h1>Ayush Kumar</h1>
-            <p>B.Tech in Computer Science and Engineering<br>First-Year Student at JB Institute of Technology, Dehradun</p>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.ibb.co/72LxWck/Ayush.jpg" alt="Ayush">
         </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="about" class="introduction">
-        <h2>About Me</h2>
-        <p>Hello! I'm Ayush Kumar, a first-year B.Tech student specializing in Computer Science and Engineering at JB Institute of Technology, Dehradun. Since starting in 2024, I have been working as a full stack web developer for the past 6 months. I am proficient in creating dynamic and engaging websites with a focus on user experience.</p>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <i class="fab fa-html5"></i>
-                <p>HTML</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-css3-alt"></i>
-                <p>CSS</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-js"></i>
-                <p>JavaScript</p>
-            </div>
-            <div class="skill">
-                <i class="fab fa-python"></i>
-                <p>Python</p>
-            </div>
-            <div class="skill">
-                <i class="fas fa-laptop-code"></i>
-                <p>Full Stack Development</p>
+        <div class="intro">
+            <h1>Hello! I am Ayush Kumar</h1>
+            <p>A first-year Computer Science and Engineering student at JB Institute of Technology, Dehradun. Currently pursuing my B.Tech, I have been working as a web developer for the past 6 months, specializing in full-stack development. I am seeking part-time job opportunities and internships to further enhance my skills. I have developed engaging websites showcasing my skills in various technologies such as Python, HTML, Java, and CSS.</p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Full Stack Development</li>
+            </ul>
+        </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="https://ayushkumar345.github.io/ayushkumarrrrr/#">
+                        <img src="https://via.placeholder.com/600x400?text=Project+1" alt="Project 1">
+                        <h3>Project 1</h3>
+                        <p>Dynamic and engaging website demonstrating expertise in full-stack development.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://ayushkumar345.github.io/2ndd-portfolio/">
+                        <img src="https://via.placeholder.com/600x400?text=Project+2" alt="Project 2">
+                        <h3>Project 2</h3>
+                        <p>Professional portfolio showcasing various web development projects.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://ayushkumar345.github.io/3rd-portfolio/">
+                        <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3">
+                        <h3>Project 3</h3>
+                        <p>Innovative project demonstrating advanced coding and design skills.</p>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Engaging Website</h3>
-            <p>I have developed a highly engaging website as a project, showcasing my skills in full stack development. Check it out below!</p>
-            <a href="#" class="btn">View Project</a>
+        <div class="contact">
+            <h2>Contact Details</h2>
+            <ul>
+                <li><a href="mailto:ayushsoni7488@gmail.com"><img src="https://i.ibb.co/ch299ZW/icons8-email-48.png" alt="Email"></a></li>
+                <li><a href="https://www.linkedin.com/in/ayush-soni-285682316/"><img src="https://i.ibb.co/HFSDXGG/icons8-linkedin-94.png" alt="LinkedIn"></a></li>
+            </ul>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>If you are looking for a dedicated and skilled web developer for part-time jobs or internships, feel free to get in touch!</p>
-        <a href="mailto:ayushsoni7488@gmail.com" class="btn">Email Me</a>
-    </section>
-
-    <footer>
-        <div class="container">
-            <img src="jbit.jpeg" alt="JB Institute of Technology Logo" class="college-logo">
-            <p>&copy; 2024 Ayush Kumar. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
